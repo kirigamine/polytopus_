@@ -46,7 +46,7 @@ html {
     height: 100%;
 }
 
-body .pc {
+body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background: var(--main-light-color);
@@ -55,12 +55,16 @@ body .pc {
     min-height: 100vh;
 }
 
+body .PC {
+    font-size: 1rem;
+}
+
 body .tablet {
     font-size: 0.9rem;
 }
 
 body .mobile {
-    0.85rem
+    font-size: .85rem
 }
 
 /* header and footer */
