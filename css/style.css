@@ -55,15 +55,15 @@ body {
     min-height: 100vh;
 }
 
-body .PC {
+body.pc {
     font-size: 1rem;
 }
 
-body .tablet {
+body.tablet {
     font-size: 0.9rem;
 }
 
-body .mobile {
+body.mobile {
     font-size: .85rem
 }
 
@@ -142,14 +142,26 @@ header nav a:hover {
 main {
     flex-grow: 1;
     margin-top: 0;
-    padding: 1rem;
     min-height: 50vh;
 }
 
-main p {
-    padding-left: 1rem;
+main.pc {
+    padding: 1rem 10rem;
 }
 
+main.tablet {
+    padding: 1rem;
+}
+
+main.mobile {
+    padding: .5rem;
+}
+
+main b {
+    background: linear-gradient(transparent 70%, var(--light-accent-color) 0%);
+}
+
+/* line */
 hr {
     position: relative;
     border: none;
@@ -172,7 +184,6 @@ hr::before {
     /* アイコンより後ろ */
 }
 
-/* 発光エフェクト */
 hr::after {
     content: "\f06e";
     /* アイコン */
@@ -185,14 +196,10 @@ hr::after {
 
     color: var(--dark-accent-color);
     font-size: 1.2rem;
-
     /* アニメーション */
     animation: fadeIn 0.8s ease-out forwards, floating 3s ease-in-out infinite;
 }
 
-main b {
-    background: linear-gradient(transparent 70%, var(--light-accent-color) 0%);
-}
 
 /* h1 ~ h3 */
 main h1,

@@ -1,15 +1,19 @@
 function applyResponsiveClass() {
-    let body = document.body;
-    body.classList.remove("pc", "tablet", "mobile");
+    let elements = document.querySelectorAll("[data-responsive]");
 
-    if (window.innerWidth >= 1024) {
-        body.classList.add("pc");
-    } else if (window.innerWidth >= 768) {
-        body.classList.add("tablet");
-    } else {
-        body.classList.add("mobile");
-    }
+    elements.forEach(el => {
+        el.classList.remove("pc", "tablet", "mobile");
+
+        if (window.innerWidth >= 1024) {
+            el.classList.add("pc");
+        } else if (window.innerWidth >= 768) {
+            el.classList.add("tablet");
+        } else {
+            el.classList.add("mobile");
+        }
+    });
 }
+
 
 function applyDarkMode() {
     if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
@@ -19,12 +23,14 @@ function applyDarkMode() {
     }
 }
 
-// 初回適用
-applyResponsiveClass();
-applyDarkMode();
+// `DOMContentLoaded` で実行（applyResponsiveClassをグローバルにしたのでOK）
+document.addEventListener("DOMContentLoaded", () => {
+    applyResponsiveClass();
+    applyDarkMode();
 
-// ウィンドウリサイズ時に再適用
-window.addEventListener("resize", applyResponsiveClass);
+    // ウィンドウリサイズ時にレスポンシブを再適用
+    window.addEventListener("resize", applyResponsiveClass);
 
-// ダークモードの変更を監視
-window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyDarkMode);
+    // ダークモードの変更を監視
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", applyDarkMode);
+});
