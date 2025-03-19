@@ -29,21 +29,38 @@ p {
 :root {
     --main-light-color: #f5f5f5;
     --main-dark-color: #333;
+    --font-color: #222;
     --accent-color: #00A968;
     --light-accent-color: #7fe8c0;
     --dark-accent-color: #006956;
 }
 
+.dark-mode {
+    --main-light-color: #333;
+    --main-dark-color: #f5f5f5;
+    --font-color: #f5f5f5;
+}
+
+
 html {
     height: 100%;
 }
 
-body {
+body .pc {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background: var(--main-light-color);
+    color: var(--font-color);
     flex-direction: column;
     min-height: 100vh;
+}
+
+body .tablet {
+    font-size: 0.9rem;
+}
+
+body .mobile {
+    0.85rem
 }
 
 /* header and footer */
@@ -164,10 +181,6 @@ hr::after {
 
     color: var(--dark-accent-color);
     font-size: 1.2rem;
-
-    /* 目の周囲の光 */
-    box-shadow: 0px 0px 30px rgba(245, 245, 245, 1),
-        0px 0px 50px rgba(245, 245, 245, 0.6);
 
     /* アニメーション */
     animation: fadeIn 0.8s ease-out forwards, floating 3s ease-in-out infinite;
