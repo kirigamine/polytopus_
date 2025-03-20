@@ -83,14 +83,15 @@ header {
 header h1 {
     position: absolute;
     font-size: 3rem;
-    bottom: -.75em;
+    bottom: -.8em;
     left: .25em;
+    font-family: "Bebas Neue", sans-serif;
     z-index: 400;
 }
 
 header h1::first-letter {
     font-size: 2em;
-    letter-spacing: -0.25em;
+    letter-spacing: -.5rem;
 }
 
 footer {
@@ -125,6 +126,7 @@ footer {
     bottom: 0;
     right: 0;
     background: var(--main-dark-transparent);
+    font-family: "Bebas Neue", sans-serif;
     list-style: none;
 }
 
