@@ -301,6 +301,10 @@ main h3 {
     margin-right: .5rem;
 }
 
+[data-responsive="moreprofile"] img {
+    width: 100%;
+}
+
 @media (min-width: 1024px) {
     [data-responsive="moreprofile"] {
         grid-template-columns: 1fr 1fr;
