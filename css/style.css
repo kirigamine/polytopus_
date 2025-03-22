@@ -103,7 +103,7 @@ footer {
 /* ナビゲーションメニュー */
 /* ナビゲーションの位置調整 */
 [data-responsive="nbar"] {
-    position: fixed;
+    position: relative;
     background: var(--main-dark-color);
     top: 9rem;
     left: 0;
